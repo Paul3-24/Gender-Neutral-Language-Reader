@@ -1,0 +1,22 @@
+Expected output for sample.txt
+================================
+
+Detected term | Occurrences | Suggested alternative
+chairman      | 1           | chairperson
+chairwoman    | 1           | chairperson
+policeman     | 1           | police officer
+fireman       | 1           | firefighter
+stewardess    | 1           | flight attendant
+mankind       | 1           | humankind
+man-made      | 1           | human-made
+he            | 2           | they (when the person's pronouns are unknown)
+his           | 1           | their (when the person's pronouns are unknown)
+him           | 1           | them (when the person's pronouns are unknown)
+businessman   | 1           | businessperson
+mailman       | 1           | mail carrier
+salesman      | 1           | salesperson
+
+Total distinct terms: 13
+Total occurrences: 14
+
+Note: "the" does not count as "he", because "he" must match as a whole word.
