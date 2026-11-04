@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeutralScan · Gender Neutral Language Recognizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+
+  <header class="app-header">
+    <h1 class="app-brand">
+      NeutralScan
+    </h1>
+    <p class="app-subtitle">
+      A gender neutral language recognizer — scan a .txt file or paste text to find gender-specific words and review suggested neutral alternatives.
+    </p>
+  </header>
+
+  <div class="panel">
+    <h2><span class="step"></span> Provide Text</h2>
+
+    <div class="file-picker-row">
+      <label class="file-label" for="fileInput">
+        <span class="icon" aria-hidden="true">📄</span> select .txt file
+      </label>
+      <input id="fileInput" type="file" accept=".txt,text/plain">
+      <span id="fileName" class="file-name">no file selected</span>
+    </div>
+
+    <div class="divider"><span>or paste / type text below</span></div>
+
+    <div class="paste-area">
+      <label for="textInput">Insert text to analyse</label>
+      <textarea id="textInput" placeholder="Paste your text here…..."></textarea>
+    </div>
+
+    <div class="button-group">
+      <button id="analyzeBtn" class="primary" type="button">Analyze text</button>
+      <button id="sampleBtn" type="button">Load sample text</button>
+      <button id="clearBtn" class="text-link" type="button">clear all</button>
+    </div>
+
+    <div id="status" class="status-msg" role="status" aria-live="polite">
+      Choose a .txt file, paste text, or load the sample to begin.
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="results-header">
+      <h2><span class="step"></span> Recognition Results</h2>
+      <div class="occurrence-badge"><strong id="totalOccurrences">0</strong> occurrences</div>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Detected term</th>
+            <th>Occurrences</th>
+            <th>Suggested alternative</th>
+          </tr>
+        </thead>
+        <tbody id="resultsBody">
+          <tr><td colspan="3" class="empty-message">No analysis results yet.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p id="noTerms" class="note-box" hidden>No predefined gender-specific terms were detected.</p>
+
+  </div>
+
+  <div class="panel">
+    <h2><span class="step"></span> How It Works</h2>
+    <ol class="how-list">
+      <li>The app reads a plain-text file <em>or</em> the text you paste into the box.</li>
+      <li>Each predefined term is turned into a regular expression with word boundaries and the case-insensitive flag.</li>
+      <li>It counts every match and shows the suggested alternative. The text is never changed automatically.</li>
+    </ol>
+  </div>
+
+  <footer>NeutralScan · Automata Theory and Formal Languages 2026</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
